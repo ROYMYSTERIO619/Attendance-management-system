@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header>
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div>
+            <label for="time">Time:</label>
+            <input type="text" id="time" name="time" placeholder="Enter time (e.g., 2:00)">
+        </div>
+        <div>
+            <label for="amPm">AM/PM:</label>
+            <select id="amPm" name="amPm">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+        <div>
+            <label for="className">Class Name:</label>
+            <input type="text" id="className" name="className" placeholder="Enter class name">
+        </div>
+        <div>
+            <label for="classType">Class Type:</label>
+            <select id="classType" name="classType">
+                <option value="theory">Theory</option>
+                <option value="lab">Lab</option>
+            </select>
+        </div>
+        <button onclick="saveAsPDF()">Save as PDF</button>
+    </header>
+    
+    <main>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Present</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Attendance rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <!-- Include jsPDF and jsPDF AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+    <!-- Include your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
+<footer id="footer">
+    <p>&copy; 2023 Created by Deepta Roy. All Rights Reserved.</p>
+</footer>
